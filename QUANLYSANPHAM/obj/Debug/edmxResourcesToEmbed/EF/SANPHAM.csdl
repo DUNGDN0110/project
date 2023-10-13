@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLSPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_DanhMuc">
+    <Key>
+      <PropertyRef Name="IDDM" />
+    </Key>
+    <Property Name="IDDM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_SanPham">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GiaSP" Type="Int32" />
+    <Property Name="NgaySX" Type="DateTime" Precision="3" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="IDDM" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="QLSPEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_DanhMuc" EntityType="Self.tbl_DanhMuc" />
+    <EntitySet Name="tbl_SanPham" EntityType="Self.tbl_SanPham" />
+  </EntityContainer>
+</Schema>
